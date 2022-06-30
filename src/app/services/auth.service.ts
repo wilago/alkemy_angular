@@ -10,10 +10,12 @@ export class AuthService {
 
  token:any;
  
+ /*
   credential={
     "email": "challenge@alkemy.org",
     "password":"react"
   };
+  */
 
   constructor(private http: HttpClient) {
 
@@ -69,10 +71,12 @@ export class AuthService {
 
     }
 
-estaAutenticado():boolean {
-  console.log('paso',this.token.length > 2);
-  return this.token.length > 2;
-}
+
+  //  valida que el token existe y que tenga mas de 2 caracteres
+    estaAutenticado():boolean {
+      //console.log('paso',this.token.length > 2);
+      return this.token.length > 2;
+    }
 
 
 }
