@@ -43,7 +43,7 @@ export class AuthService {
           return this.http.post(url,body, {headers})
                           .pipe(
                             map(resp => {
-                              console.log("Entro en map")
+                              //console.log("Entro en map")
                                 this.guardarToken(resp['token']);
                                 return resp;
                             })

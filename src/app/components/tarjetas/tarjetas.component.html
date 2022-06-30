@@ -1,0 +1,26 @@
+
+<div class="container m-5 ">
+
+<!-- <div class="card-columns m-5 animated fadeIn"> -->
+
+    <div class="row row-cols-2 row-cols-lg-2 g-2 g-lg-2">
+       
+                <div (click)="verPlato( item )"   *ngFor="let item of items" class="col card puntero">
+                    <img class="card-img-top" [src]="item.image"  alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.title }}</h5>
+                        <p class="card-text">
+                        <!--- <span *ngFor="let artista of item.artists" class="badge badge-pill badge-primary">
+                                {{ artista.name }}
+                            </span>  -->
+                            <span>
+                            <button class="btn btn-outline-success m-3">Detalle</button>
+                            <button class="btn btn-outline-danger">Eliminar</button>
+                            </span>
+                        
+                    </div>
+                </div>
+       
+    </div>
+<!-- </div> -->
+</div>

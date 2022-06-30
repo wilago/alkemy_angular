@@ -11,16 +11,37 @@ import { SpoonacularService } from 'src/app/services/spoonacular.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private auth: AuthService, private router: Router, private spoonacular:SpoonacularService) { }
+  platosVegan:any;
+  platosOther:any;
+  constructor(private auth: AuthService, private router: Router, private spoonacularService:SpoonacularService) { 
 
-  ngOnInit(): void {
-    const query='food/search/';
-    this.spoonacular.foot(query)
+
+  }
+
+   ngOnInit() {
+    
+    let query='recipes/complexSearch/';
+    let  opciones="query=&diet=vegan&number=2&fillIngredients=true";
+     this.spoonacularService.foot(query, opciones)
         .subscribe(data=>{
-                 console.log("data",data);
+                 console.log("Vegans",data['results']);
+                 this.platosVegan= data['results'];
+                 
+              
+        });
+
+    query='recipes/complexSearch/';
+    opciones="query=meat&type=main course&diet=&number=2&fillIngredients=true";
+     this.spoonacularService.foot(query, opciones)
+        .subscribe(data=>{
+                 console.log("Others",data['results']);
+                 this.platosOther= data['results'];
+              
               
         })
+        
   }
+
 
   salir(){
       this.auth.logout();

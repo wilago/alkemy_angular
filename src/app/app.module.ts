@@ -8,13 +8,19 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
+import { BuscarComponent } from './components/buscar/buscar.component';
+import { PlatoComponent } from './components/plato/plato.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    MenuComponent
+    MenuComponent,
+    TarjetasComponent,
+    BuscarComponent,
+    PlatoComponent
   ],
   imports: [
     BrowserModule,
