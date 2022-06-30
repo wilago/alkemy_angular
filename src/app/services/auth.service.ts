@@ -15,40 +15,64 @@ export class AuthService {
     "password":"react"
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
 
-    async  loginUser(){
+    this.leerToken();
+
+   }
+   
+   logout(){
+
+    localStorage.removeItem("token");
+
+   }
+      
+   // fundion que permite el logueo del usuario
+   loginUser(credential){
 
           // Se crean las contantes  de cabecera y body para realizar el consumo de la api de login
           const url = `http://challenge-react.alkemy.org/`
           const headers = new HttpHeaders({
             'Content-Type': 'application/json'
           });
-  
 
-      const body= this.credential// JSON.stringify(this.credential); //
-  
-      this.http.post<any>(url,body, {headers})
-                    .subscribe(data=>{
-                     console.log(data);
-                     ///return data;
-                     this.token=data;
-                     console.log("token",this.token.token);
-                     localStorage.setItem("token",this.token.token);
-                     return new Promise((accept, reject) => {
-                      if (this.token.token) {
-    
-                        accept("Login correcto");
-                      } else {
-                        reject("login incorrecto");
-                      }
-                    });
-                      
-
-                    })
-
+          const body= credential// JSON.stringify(this.credential); //
+          //se retorna el observable
+          return this.http.post(url,body, {headers})
+                          .pipe(
+                            map(resp => {
+                              console.log("Entro en map")
+                                this.guardarToken(resp['token']);
+                                return resp;
+                            })
+                          )
 
     }
+    
+
+
+    guardarToken(token:string){
+        this.token= token;
+        localStorage.setItem("token", token);
+            
+    }
+
+
+    leerToken(){
+        if (localStorage.getItem("token")){
+            this.token= localStorage.getItem("token");
+ 
+        } else {
+          this.token= "";
+        }
+        return this.token;
+
+    }
+
+estaAutenticado():boolean {
+  console.log('paso',this.token.length > 2);
+  return this.token.length > 2;
+}
 
 
 }

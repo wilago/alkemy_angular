@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { MENU_ROUTES } from './components/menu/menu.routes';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {path:'', component:LoginComponent  },
@@ -12,9 +13,10 @@ const routes: Routes = [
   {path:'login', component : LoginComponent  },
   {path:"menu", 
       component : MenuComponent,
-      children: MENU_ROUTES
+      children: MENU_ROUTES,
+      canActivate: [LoginGuard]
   },
-{path:'**', pathMatch:'full', redirectTo:'login'  }
+//{path:'**', pathMatch:'full', redirectTo:'login'  }
   
 ];
 
