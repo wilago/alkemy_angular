@@ -1,19 +1,23 @@
-<div class="m--5">
-    <h1>  Listado de comida</h1>   
-    <hr>
-    <button class="btn btn-outline-danger" 
-    (click)="salir()">
-    Salir
-    </button>
-    <hr>
+<div  class="bntSalir">
+    <div>
+            <h1>  Listado de comida</h1>   
+    </div>
+    <div>
+            <button class="btn btn-outline-danger" 
+            (click)="salir()">
+            Salir
+            </button>
+    </div>
 </div>
+<hr>
 
 
 <h2>Platos veganos</h2>
-<hr>
-<app-tarjetas [items]="platosVegan"></app-tarjetas>
 
+<app-tarjetas [items]="platosVegan.results"></app-tarjetas>
+
+<hr>
 <h2>Platos Varios</h2>
-<hr>
 
-<app-tarjetas [items]="platosOther"></app-tarjetas>
+
+<app-tarjetas [items]="platosOther.results"></app-tarjetas>

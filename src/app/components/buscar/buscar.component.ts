@@ -17,12 +17,12 @@ export class BuscarComponent implements OnInit {
 
   buscar(termino: string) {
     console.log(termino); 
-    let query='recipes/autocomplete/';
-    let  opciones=`query=${termino}&&number=2&fillIngredients=true`;
+    let query='recipes/complexSearch/';
+    let  opciones=`query=${termino}&number=10&maxFat=25`;
     //this.loading = true;
-    this.spoonacularService.foot( termino )
+    this.spoonacularService.foot(query, opciones )
           .subscribe( (data: any) => {
-            console.log(data);
+            console.log("data",data);
             this.platos = data;
             //this.loading = false;
           });

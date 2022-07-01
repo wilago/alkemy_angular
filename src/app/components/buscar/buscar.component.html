@@ -1,7 +1,11 @@
-<div class="row">
+<div class="row m-5" >
+    <p style="color: red">Presione tecla Enter para buscar Plato</p>
     <div class="col">
-        <input #termino type="text" (keyup)="buscar(termino.value)" class="form-control" placeholder="Buscar plato...">
+        <input #termino type="text" (keyup.enter)="buscar(termino.value)" class="form-control" placeholder="Buscar plato...">
+    </div>
+    <div>
+        <p></p>
     </div>
 </div>
 
-<app-tarjetas  [items]="platos"></app-tarjetas>
+<app-tarjetas  [items]="platos.results"></app-tarjetas>

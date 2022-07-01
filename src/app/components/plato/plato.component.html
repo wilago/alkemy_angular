@@ -1,59 +1,28 @@
+<div class="card-columns m-3 animated fadeIn">
+<div     class="col card puntero">
+    <img class="card-img-top" [src]="plato.image"  alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{plato.title}}</h5>
+            <p class="card-text">
+                
+                {{plato.summary}}  
+            
 
-
-
-<div class="row animated fadeIn" >
-    <div class="col-2">
-        <img [src]=" " class="img-thumbnail img-circle">
-    </div>
-
-    <div class="col">
-        <h3></h3>
-        <p>
-            <a [href]="" target="_blank">
-          Ir a la página del artista
-        </a>
+         <!-- <span *ngFor="let ingrediente of plato.extendedIngredients" class="badge badge-pill badge-primary">
+                {{ ingrediente.name }}
+            </span>   -->
         </p>
-
-    </div>
-
-    <div class="col-4 text-right">
-
-        <button routerLink="/search" class="btn btn-outline-danger">
-        Regresar
-      </button>
-
+         <hr>
+        <h5>Ingredientes</h5>
+        <br>
+        <ol class="list-group list-group-numbered">
+            <li *ngFor="let ingrediente of plato.extendedIngredients" class="list-group-item">
+                {{ ingrediente.name }} 
+            </li>
+        </ol>
     </div>
 </div>
-
-
-<div class="row m-5">
-    <div class="col">
-
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Foto</th>
-                    <th>Album</th>
-                    <th>Canción</th>
-                    <th>Vista Previa</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr >
-                    <td>
-                        <img [src]=" " class="img-thumb">
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <!-- <audio [src]="track.preview_url" controls></audio> -->
-                        <iframe [src]="" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                    </td>
-                </tr>
-            </tbody>
-
-        </table>
-
-    </div>
+</div>
+<div class="d-grid gap-2">
+<button [routerLink]="['/menu/home']" class="btn btn-primary m-5"> Regresar</button>
 </div>

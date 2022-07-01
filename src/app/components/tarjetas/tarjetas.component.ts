@@ -15,17 +15,9 @@ export class TarjetasComponent  {
 
 
   verPlato( item: any ) {
+    //console.log("item",item.id);
 
-    let platoId;
-
-    /*
-    if ( item.type === 'artist' ) {
-      platoId = item.id;
-    } else {
-      platoId = item.artists[0].id;
-    }
-    */
-    this.router.navigate([ '/plato', platoId  ]);
+    this.router.navigate([ '/menu/plato', item.id ]);
 
   }
 

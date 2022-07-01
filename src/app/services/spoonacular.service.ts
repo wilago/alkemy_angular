@@ -36,6 +36,7 @@ export class SpoonacularService {
 getUrl(query:string,opciones:string=""){
 
   const url = `https://api.spoonacular.com/${query}?${this.apiKey}&${opciones}`
+  console.log(url);
   return url;
 
 }

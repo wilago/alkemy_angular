@@ -9,6 +9,7 @@ import { SpoonacularService } from 'src/app/services/spoonacular.service';
 export class PlatoComponent  {
 
   plato;
+  id: string;
 
   constructor(private router:ActivatedRoute , private  spoonacularService: SpoonacularService) {
 
@@ -16,8 +17,7 @@ export class PlatoComponent  {
     this.router.params.subscribe( params => {
         
       console.log(params['id']);
-
-
+      this.getPlato(params['id'])
     });
 
 

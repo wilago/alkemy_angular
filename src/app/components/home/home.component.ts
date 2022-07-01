@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
   platosVegan:any;
   platosOther:any;
+
   constructor(private auth: AuthService, private router: Router, private spoonacularService:SpoonacularService) { 
 
 
@@ -21,24 +22,26 @@ export class HomeComponent implements OnInit {
    ngOnInit() {
     
     let query='recipes/complexSearch/';
-    let  opciones="query=&diet=vegan&number=2&fillIngredients=true";
+    let  opciones="fillIngredients=true&diet=vegan&number=2";
      this.spoonacularService.foot(query, opciones)
         .subscribe(data=>{
-                 console.log("Vegans",data['results']);
-                 this.platosVegan= data['results'];
+                 console.log("Vegans",data);
+                 this.platosVegan= data;
+                
                  
               
         });
 
     query='recipes/complexSearch/';
-    opciones="query=meat&type=main course&diet=&number=2&fillIngredients=true";
+    opciones="fillIngredients=true&query=meat&diet=&number=2&";
      this.spoonacularService.foot(query, opciones)
         .subscribe(data=>{
-                 console.log("Others",data['results']);
-                 this.platosOther= data['results'];
+                 console.log("Others",data);
+                 this.platosOther= data;
+                
               
               
-        })
+        });
         
   }
 
@@ -48,6 +51,7 @@ export class HomeComponent implements OnInit {
       this.router.navigateByUrl('/login');
   }
 
+  
 
   
 
