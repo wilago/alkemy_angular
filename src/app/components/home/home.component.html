@@ -16,10 +16,10 @@
 
 <h2>Platos veganos</h2>
 
-<app-tarjetas [items]="platosVegan.results"></app-tarjetas>
+<app-tarjetas [items]="platosVegan.results" (idPlato)="funcGetId($event)"></app-tarjetas>
 
 <hr>
 <h2>Platos Varios</h2>
 
 
-<app-tarjetas [items]="platosOther.results"></app-tarjetas>
+<app-tarjetas [items]="platosOther.results" (idPlato)="funcGetId($event)"></app-tarjetas>

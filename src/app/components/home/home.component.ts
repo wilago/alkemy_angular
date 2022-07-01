@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { SpoonacularService } from 'src/app/services/spoonacular.service';
+import { PruebaspoonacularService } from '../../services/pruebaspoonacular.service';
 
 
 @Component({
@@ -11,16 +12,33 @@ import { SpoonacularService } from 'src/app/services/spoonacular.service';
 })
 export class HomeComponent implements OnInit {
 
-  platosVegan:any;
+ platosVegan:any;
   platosOther:any;
   mensajeError:string;
-  constructor(private auth: AuthService, private router: Router, private spoonacularService:SpoonacularService) { 
+  id;
+
+
+
+
+  constructor(private auth: AuthService, 
+              private router: Router, 
+              private spoonacularService:SpoonacularService,
+              private pruebaspoonacularService:PruebaspoonacularService
+              ) { 
 
 
   }
 
    ngOnInit() {
     
+
+  //  this.platosVegan= this.pruebaspoonacularService.foodVegan();
+  
+    //this.platosOther= this.pruebaspoonacularService.foodOther();
+
+   
+ 
+
     let query='recipes/complexSearch/';
     let  opciones="fillIngredients=true&diet=vegan&number=2";
      this.spoonacularService.foot(query, opciones)
@@ -47,6 +65,11 @@ export class HomeComponent implements OnInit {
           this.mensajeError=err.error.message;
         }
         );
+
+
+        
+        
+       console.log("Array datos vegan ",this.platosVegan);
         
   }
 
@@ -56,6 +79,33 @@ export class HomeComponent implements OnInit {
       this.router.navigateByUrl('/login');
   }
 
+
+
+  funcGetId(e){
+      
+    //console.log("Padre",e);
+
+     //filtra los datos del array platosVegans
+     let newArr= this.platosVegan.results.filter(data=>
+          data.id!=e
+        );
+
+       //console.log("New",newArr);
+       this.platosVegan.results=newArr;
+      //this.platosVegan.results[index]=[];
+
+
+      //filtra los datos del array platosOther
+     let newArr2= this.platosOther.results.filter(data=>
+          data.id!=e
+        );
+
+       //console.log(newArr2);
+       this.platosOther.results=newArr2;
+
+  }
+
+  
   
 
   

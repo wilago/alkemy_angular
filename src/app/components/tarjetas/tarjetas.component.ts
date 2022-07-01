@@ -1,4 +1,4 @@
-import { Component, Input  } from '@angular/core';
+import { Component, Input, Output, EventEmitter  } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-tarjetas',
@@ -8,16 +8,30 @@ import { Router } from '@angular/router';
 export class TarjetasComponent  {
 
   @Input() items: any[] = [];
-  constructor(private router: Router) { }
+  @Output() idPlato= new EventEmitter();
+  constructor(private router: Router) {
+
+   
+
+   }
 
   
 
 
 
-  verPlato( item: any ) {
-    //console.log("item",item.id);
+  verPlato( item:any ) {
 
-    this.router.navigate([ '/menu/plato', item.id ]);
+      this.router.navigate([ '/menu/plato', item.id ]);
+      console.log("ver plato" ,item);
+
+  }
+
+
+  getIdPlato(data:any ){
+
+      this.idPlato.emit(data.id);
+
+      console.log("item",data)
 
   }
 
