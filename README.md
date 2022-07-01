@@ -1,27 +1,33 @@
-# Restaurant
+Ah este proyecto se le ha foodHeart, ya que es una web que emula el ingreso a una web de comidas.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
 
-## Development server
+En la siguiente imagen muestra la pagidina de login, donde para ealizar el ingreso debe consumir un API y almacenar el TOKEN recibido. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![image](https://user-images.githubusercontent.com/27816405/176963666-19db9b1d-772c-4389-945e-f056140e3bcf.png)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Si los campos no son llenados correctamente estos son validados y muestran un mensaje en pantalla, con el fin de que el usuario que raliza el ingreso se entere se sus errores, como de muestra en la siguiente imagen.
 
-## Build
+![image](https://user-images.githubusercontent.com/27816405/176964396-fbaf860c-a9ee-4095-97a4-55964d5e432d.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+Si el campo email es correcto pero la contraseña aun no cumple con la validacion se obtine el resultado que muestra la siguiente imagen.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![image](https://user-images.githubusercontent.com/27816405/176964570-55882326-6c4f-49c7-8f06-7f697e45bc9b.png)
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Una vez que se llenen los campos, pero si por alguna razon uno de estos dos campos estan errados el aplicativo regresa un mensaje informandolo como se muestra en la siguiente imagen.
 
-## Further help
+![image](https://user-images.githubusercontent.com/27816405/176964732-6108f681-e07b-40f5-b2bb-5a2934b32e2b.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Si los datos son correctos nos pemite el ingreso y nos muestra en pantalla 4 platos, de los cuales 2 son veganos y 2 dos son de toma aleatoria como se muestra en la siguiente imagen
+
+![image](https://user-images.githubusercontent.com/27816405/176965119-02104f1b-c376-43a3-8125-53fe8084838b.png)
+
+Tamnien podemos observa como se realiza el almacenamiento del token en el localstorage como se muestra en la siguente imagen.
+
+![image](https://user-images.githubusercontent.com/27816405/176965227-ce908bae-61ca-4708-86f1-79fc71184044.png)
+
+
+
+
