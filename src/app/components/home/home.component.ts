@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   platosVegan:any;
   platosOther:any;
-
+  mensajeError:string;
   constructor(private auth: AuthService, private router: Router, private spoonacularService:SpoonacularService) { 
 
 
@@ -41,7 +41,12 @@ export class HomeComponent implements OnInit {
                 
               
               
-        });
+        },
+        err=>{
+          console.log("Error httpClient",err);
+          this.mensajeError=err.error.message;
+        }
+        );
         
   }
 
