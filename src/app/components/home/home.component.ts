@@ -92,7 +92,6 @@ export class HomeComponent implements OnInit {
 
        //console.log("New",newArr);
        this.platosVegan.results=newArr;
-      //this.platosVegan.results[index]=[];
 
 
       //filtra los datos del array platosOther

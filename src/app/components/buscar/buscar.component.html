@@ -8,4 +8,4 @@
     </div>
 </div>
 
-<app-tarjetas  [items]="platos.results"></app-tarjetas>
+<app-tarjetas  [items]="platos.results" (idPlato)="funcGetId($event)"></app-tarjetas>

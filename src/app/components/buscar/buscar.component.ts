@@ -28,4 +28,30 @@ export class BuscarComponent implements OnInit {
           });
   }
 
+
+
+  funcGetId(e){
+      
+    //console.log("Padre",e);
+
+     //filtra los datos del array platosVegans
+     let newArr= this.platos.results.filter(data=>
+          data.id!=e
+        );
+
+       //console.log("New",newArr);
+       this.platos.results=newArr;
+
+      //filtra los datos del array platosOther
+     let newArr2= this.platos.results.filter(data=>
+          data.id!=e
+        );
+
+       //console.log(newArr2);
+       this.platos.results=newArr2;
+
+  }
+
+
+
 }
