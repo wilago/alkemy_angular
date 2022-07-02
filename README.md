@@ -29,5 +29,24 @@ Tamnien podemos observa como se realiza el almacenamiento del token en el locals
 ![image](https://user-images.githubusercontent.com/27816405/176965227-ce908bae-61ca-4708-86f1-79fc71184044.png)
 
 
+Al precionar el boton detalle realiza el consunmo de la Api de este solo producto para mostrar el detalle como se muestra en la siguente figura.
+
+![image](https://user-images.githubusercontent.com/27816405/177005292-9ac1fd55-8a54-43f4-9bab-49b4de0d1f7e.png)
+
+El boton eliminar borra de la lista el plato seleccionado como se muestra en la siguente imagen
+
+![image](https://user-images.githubusercontent.com/27816405/177005369-204487a2-331d-483a-9ca0-c42fa4205b18.png)
+
+
+En el modulo de buscar se encuentra un input donde se debe indicar la palabra completa del plato a buscar y de preciona la tecla Enter, como muestra la siguente figura.
+
+![image](https://user-images.githubusercontent.com/27816405/177005420-51cb9c0f-1ada-42c9-9760-2f64465f3857.png)
+
+![image](https://user-images.githubusercontent.com/27816405/177005437-373eb4ca-2613-4de9-8cf1-5b92860b72e2.png)
+
+
+
+
+
 
 
